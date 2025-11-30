@@ -5,13 +5,11 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  # Pods for your Flutter project
-  # Ez az útvonal a projekt gyökérkönyvtárához képest van
-  flutter_application_path = '../..'
-  # A podhelper.rb fájl a 'ios/Flutter/' mappában található
-  load File.join(flutter_application_path, 'ios', 'Flutter', 'podhelper.rb')
+  # Ez a sor betölti a Flutter által generált podhelper.rb fájlt
+  # A __dir__ a Podfile mappáját jelöli (ios/), ahonnan a 'Flutter/podhelper.rb' relatívan elérhető
+  load File.join(__dir__, 'Flutter', 'podhelper.rb')
 
-  flutter_install_all_ios_pods(flutter_application_path)
+  flutter_install_all_ios_pods # A flutter_application_path már nem szükséges itt
 
   target 'RunnerTests' do
     inherit! :complete
