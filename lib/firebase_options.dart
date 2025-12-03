@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios; // Hozzáadva az iOS opció visszatérítése
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -60,4 +57,12 @@ class DefaultFirebaseOptions {
     storageBucket: 'gymbro-1f694.firebasestorage.app',
   );
 
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyA7hMqvdZ9bo1rAnt7veqPpOlkihkRLSdw',
+    appId: '1:892954313142:ios:b16a997c95e8d7d0b9c117',
+    messagingSenderId: '892954313142',
+    projectId: 'gymbro-1f694',
+    storageBucket: 'gymbro-1f694.firebasestorage.app',
+    bundleId: 'com.example.beastphysical',
+  );
 }
